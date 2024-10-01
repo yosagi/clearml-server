@@ -178,7 +178,7 @@ services:
       AZURE_STORAGE_KEY: ${AZURE_STORAGE_KEY:-}
       GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS:-}
       CLEARML_WORKER_ID: "clearml-services"
-      CLEARML_AGENT_DOCKER_HOST_MOUNT: "/opt/clearml/agent:/root/.clearml"
+      CLEARML_AGENT_DOCKER_HOST_MOUNT: "/volume1/Clearml/clearml/agent:/root/.clearml"
       SHUTDOWN_IF_NO_ACCESS_KEY: 1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
