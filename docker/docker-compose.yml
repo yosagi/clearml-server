@@ -65,7 +65,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/data/elastic_7:/usr/share/elasticsearch/data
-      - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/data/logs:/usr/share/elasticsearch/logs
+      - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/logs:/usr/share/elasticsearch/logs
 
   fileserver:
     networks:
