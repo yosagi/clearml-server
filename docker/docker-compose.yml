@@ -53,6 +53,7 @@ services:
       node.name: clearml
       reindex.remote.whitelist: "'*.*'"
       xpack.security.enabled: "false"
+      ES_JAVA_OPTS: "-Xms${ES_HEAP_SIZE:-10g} -Xmx${ES_HEAP_SIZE:-10g}"
     ulimits:
       memlock:
         soft: -1
