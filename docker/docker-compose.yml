@@ -7,6 +7,7 @@ services:
     container_name: clearml-apiserver
     image: allegroai/clearml:latest
     restart: unless-stopped
+    stop_grace_period: 30s
     volumes:
     - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/logs:/var/log/clearml
     - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/config:/opt/clearml/config
@@ -78,6 +79,7 @@ services:
     environment:
       CLEARML__fileserver__delete__allow_batch: "true"
     restart: unless-stopped
+    stop_grace_period: 30s
     volumes:
     - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/logs:/var/log/clearml
     - ${CLEARML_STORAGE:-/volume1/Clearml/clearml}/data/fileserver:/mnt/fileserver
@@ -113,6 +115,7 @@ services:
     #  CLEARML_SERVER_SUB_PATH : clearml-web # Allow Clearml to be served with a URL path prefix.
     image: allegroai/clearml:latest
     restart: unless-stopped
+    stop_grace_period: 30s
     depends_on:
       - apiserver
     ports:
